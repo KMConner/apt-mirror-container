@@ -23,5 +23,5 @@ jobs:
         with:
           push: true
           tags: |
-            docker.pkg.github.com/${{ github.repository }}/debmirror:${{ github.sha }}
-            docker.pkg.github.com/${{ github.repository }}/debmirror:${{ github.ref }}
+            docker.pkg.github.com/kmconner/apt-mirror-container/debmirror:${{ github.sha }}
+            docker.pkg.github.com/kmconner/apt-mirror-container/debmirror:${{ github.ref }}
