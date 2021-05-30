@@ -15,14 +15,13 @@ jobs:
       - name: Log in to GitHub Docker Registry
         uses: docker/login-action@v1
         with:
-          registry: docker.pkg.github.com
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: kmconner
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
       - name: Build container image
         uses: docker/build-push-action@v2
         with:
           push: true
           tags: |
-            docker.pkg.github.com/kmconner/apt-mirror-container/debmirror:latest
+            kmconner/debmirror:${{ github.sha }}
         env:
           GITHUB_REF: "${{ github.ref }}"
