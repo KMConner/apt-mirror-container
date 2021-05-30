@@ -8,7 +8,5 @@ RUN apt-get update && \
 RUN mkdir /etc/debmirror/
 
 COPY ./entrypoint.sh /
-COPY ./config.conf /etc/debmirror
-COPY ./config2.conf /etc/debmirror
 
 ENTRYPOINT [ "/entrypoint.sh" ]
