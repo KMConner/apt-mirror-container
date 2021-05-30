@@ -2,6 +2,9 @@ name: Docker
 
 on:
   push:
+  create:
+    tags:
+      - v*
 
 jobs:
   build-worker:
