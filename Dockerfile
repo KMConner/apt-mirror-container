@@ -5,4 +5,8 @@ RUN apt-get update && \
     apt-get -y autoclean && \
     rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT [ "/usr/bin/debmirror" ]
+RUN mkdir /etc/debmirror/
+
+COPY ./entrypoint.sh /
+
+ENTRYPOINT [ "/entrypoint.sh" ]
